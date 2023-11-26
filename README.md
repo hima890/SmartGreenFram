@@ -1,76 +1,74 @@
-# QR Code Registration System
+# SmartGreenFarm Project
 
-This repository implements a QR Code-based registration system, comprising two components: a web application for registration using Flask and a GUI interface built with Python and Qt5.
+The SmartGreenFarm project is designed to collect sensor information from a farm environment using a Python Flask server and display this information in a graphical user interface (GUI) application created with C++ and Qt5.
 
-## Overview
+## Project Structure
 
-The system leverages QR codes for efficient registration, offering a web-based platform for user registration and a desktop GUI interface for quick access to registered information.
+The project is organized into two main components:
 
-## Components
+### 1. Server Side
 
-### 1. Web Application (Registration)
+The `server_side` folder contains the Python Flask server responsible for collecting sensor information. The server is executed using the `server.py` script.
 
-- **Features:**
-  - User-friendly registration form.
-  - Dynamic QR code generation for each registration.
-  - Data validation for accurate information.
+#### Setup and Run the Server
 
-- **Getting Started:**
-  1. Clone the repository.
-  ```bash
-  git clone https://github.com/your-username/qr-registration-system.git
-  cd qr-registration-system/web-app
-  ```
+1. Navigate to the `server_side` folder:
 
-  2. Install dependencies.
-  ```bash
-  pip install -r requirements.txt
-  ```
+   ```bash
+   cd server_side
+   ```
 
-  3. Run the Flask web application.
-  ```bash
-  python app.py
-  ```
-  Open your browser and go to [http://localhost:5000](http://localhost:5000) to access the registration page.
+2. Install the required dependencies:
 
-### 2. GUI Interface (Python with Qt5)
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- **Features:**
-  - Simple interface for scanning QR codes.
-  - Instant retrieval of registered information.
-  - Intuitive design for ease of use.
+3. Run the server:
 
-- **Getting Started:**
-  1. Clone the repository.
-  ```bash
-  git clone https://github.com/your-username/qr-registration-system.git
-  cd qr-registration-system/gui-interface
-  ```
+   ```bash
+   python server.py
+   ```
 
-  2. Install dependencies.
-  ```bash
-  pip install -r requirements.txt
-  ```
+   This will start the Flask server to collect and manage sensor information.
 
-  3. Run the Python script for the GUI.
-  ```bash
-  python gui.py
-  ```
+### 2. GUI Application
 
-## Customization
+The GUI application, developed in C++ with Qt5, provides an interface to visualize the collected sensor data.
 
-Feel free to customize both the web application and the GUI interface based on your specific requirements. Modify the UI, add features, or integrate additional functionalities as needed.
+#### Build and Run the GUI Application
+
+Ensure you have the necessary dependencies installed to build C++ applications with Qt5. Then follow these steps:
+
+1. Navigate to the `gui_application` folder:
+
+   ```bash
+   cd gui_application
+   ```
+
+2. Build the C++ application:
+
+   ```bash
+   qmake
+   make
+   ```
+
+3. Run the GUI application:
+
+   ```bash
+   ./main.cpp
+   ```
+
+   The GUI application will connect to the Flask server and display the sensor information.
+
+## Configuration
+
+Adjust the server and GUI configurations in their respective files (`server.py`, `gui_app.pro`, etc.) based on your specific project requirements.
 
 ## Contributing
 
-Contributions are welcome! If you encounter issues or have ideas for improvements, please open an issue or submit a pull request.
+Contributions to improve the project, add features, or fix bugs are welcome. Please follow the contribution guidelines in the `CONTRIBUTING.md` file.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Happy coding and QR code registration!
-
----
-
-Replace placeholders such as `your-username` with the relevant information. Customize the README file based on your specific project structure and goals.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
